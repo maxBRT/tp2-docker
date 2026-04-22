@@ -3,9 +3,9 @@ FROM node:20-alpine AS builder
 
 WORKDIR /app
 
-# Ici on cope le package.json et le package-lock.json 
-# en premier pour tirer avantage de la cache. Si les dépendance 
-# n'ont pas changé, on ne réinsalle pas tout le node_modules pour rien.
+# Ici on copie le package.json et le package-lock.json 
+# en premier pour tirer avantage de la cache. Si les dépendances 
+# n'ont pas changées, on ne réinsalle pas tout le node_modules pour rien.
 COPY package*.json ./
 RUN npm install
 
